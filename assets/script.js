@@ -20,8 +20,12 @@ $(function () {
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
+
+
+
+ 
   var scheduleItems = [];
-  
+  // this code saves the text of a given time slot to local storage within an array called scheduleItems when the save button is clicked but does not print that text when the page is refreshed.
   $('.saveBtn').on('click', function() {
     scheduleItems.push({
       name: 'Item',
@@ -33,5 +37,6 @@ $(function () {
   //
   // TODO: Add code to display the current date in the header of the page.
 });
+// this code displays the current date in the header 
 var dayStamp = moment().format('dddd' + ', ' + 'MMMM Do');
   $('#currentDay').text(dayStamp);
