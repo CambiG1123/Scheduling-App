@@ -1,9 +1,18 @@
 const timeBlocks = [`#hour-1`,`#hour-2`,`#hour-3`,`#hour-4`,`#hour-5`,`#hour-9`,`#hour-10`,`#hour-11`,`#hour-12`]
 
+var clearStorageBtn = document.querySelector('.clearStorage')
 
+var clearLocal = function(){
+  console.log('storage is clear');
+  localStorage.clear();
+  location.reload();
+}
+
+clearStorageBtn.addEventListener("click", clearLocal)
 // this code displays the current date in the header 
 var dayStamp = moment().format('dddd' + ', ' + 'MMMM Do');
   $('#currentDay').text(dayStamp);
+
 
   $(document).ready(function() {
     const currentHour = dayjs().hour();
