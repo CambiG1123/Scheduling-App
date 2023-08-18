@@ -20,5 +20,19 @@ var dayStamp = moment().format('dddd' + ', ' + 'MMMM Do');
       } else {
         $(this).addClass('future').removeClass('past present');
       }
-    })
+    });
+
+    // when the document is loaded a click event listener is attatched to the save btns
+    $('.saveBtn').on('click', function() {
+      const timeBlock = $(this).closest('.time-block'); //selects the closest parent with the class time-block
+      const timeBlockId = timeBlock.attr('id'); //detects that parent's id
+      const userInput = timeBlock.find('.description').val(); // finds the text area with the class description and gets its value
+  //if the timeBlockId and the userInput are present it saves to local storage the value of  the userInput and the key of the timeBlockId
+      if (timeBlockId && userInput) {
+        localStorage.setItem(timeBlockId, userInput);
+      }
+    });
+
+
+
   });
