@@ -1,4 +1,4 @@
-const timeBlocks = [`#hour-1`,`#hour-2`,`#hour-3`,`#hour-4`,`#hour-5`,`#hour-9`,`#hour-10`,`#hour-11`,`#hour-12`]
+const timeBlocks = [`#hour-9`,`#hour-10`,`#hour-11`,`#hour-12`,`#hour-13`,`#hour-14`,`#hour-15`,`#hour-16`,`#hour-17`]
 
 var clearStorageBtn = document.querySelector('.clearStorage')
 
@@ -16,10 +16,11 @@ var dayStamp = moment().format('dddd' + ', ' + 'MMMM Do');
 
   $(document).ready(function() {
     const currentHour = dayjs().hour();
+    console.log('current hour is ', currentHour)
   
     $('.time-block').each(function() {
       const timeBlockId = $(this).attr('id');
-      const timeBlockHour = parseInt(timeBlockId.split('-')[2]); // Extract the hour from the ID
+      const timeBlockHour = parseInt(timeBlockId.split('-')[1]); // Extract the hour from the ID
   // checks if the time block hour is less than the current hour
   // if it is add ckass past and remove classes present & future
       if (timeBlockHour < currentHour) {
