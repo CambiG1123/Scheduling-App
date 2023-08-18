@@ -32,7 +32,13 @@ var dayStamp = moment().format('dddd' + ', ' + 'MMMM Do');
         localStorage.setItem(timeBlockId, userInput);
       }
     });
-
-
-
+    //for each time-block this if function is ran
+  $('.time-block').each(function() {
+    const timeBlockId = $(this).attr('id'); //finds the id of the given time block
+    const storedInput = localStorage.getItem(timeBlockId); 
+//if there is storedInput, finds the text area with the class description for each of the respective time blocks and changes its value to the value of storedInput 
+    if (storedInput) {
+      $(this).find('.description').val(storedInput);
+    }
   });
+});
